@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인기능사 레이아웃 C-1</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        #wrap{
+            width: 1000px;
+            display: flex;
+        }
+        #wrap #aside{
+            width: 20%;
+            height: 650px;
+        }
+        #aside .logo{
+            width: 100%;
+            height: 15%;
+            background-color: #a3a3a3;
+        }
+        #aside .menu{
+            width: 100%;
+            height: 85%;
+            background-color: #d1d1d1;
+        }
+        #wrap #main{
+            width: 80%;
+            height: 650px;
+            background-color: #b1b1b1;
+        }
+        #main .slider{
+            width: 100%;
+            height: 350px;
+            background-color: #b1b1b1;
+        }
+        #main .contents{
+            width: 100%;
+            height: 200px;
+            display: flex;
+        }
+        #main .contents .content1{
+            width: 33.33%;
+            height: 100%;
+            background-color: #a0a0a0;
+        }
+        #main .contents .content2{
+            width: 33.33%;
+            height: 100%;
+            background-color: #d9d9d9;
+        }
+        #main .contents .content3{
+            width: 33.33%;
+            height: 100%;
+            background-color: #c0c0c0;
+        }
+        #main .footer{
+            width: 100%;
+            height: 100px;
+            display: flex;
+        }
+        #main .footer .footer1{
+            width: 20%;
+            height: 100%;
+            background-color: #727272;
+        }
+        #main .footer .footer2{
+            width: 80%;
+            height: 100%;
+        }
+        #main .footer .footer2 .footer2_1{
+            width: 100%;
+            height: 50%;
+            background-color: gray;
+        }
+        #main .footer .footer2 .footer2_2{
+            width: 100%;
+            height: 50%;
+            background-color: darkgrey;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <aside id="aside">
+            <h1 class="logo"></h1>
+            <menu class="menu"></menu>
+        </aside>
+        <main id="main">
+            <article class="slider"></article>
+            <section class="contents">
+                <div class="content1"></div>
+                <div class="content2"></div>
+                <div class="content3"></div>
+            </section>
+            <footer class="footer">
+                <div class="footer1"></div>
+                <div class="footer2">
+                    <div class="footer2_1"></div>
+                    <div class="footer2_2"></div>
+                </div>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>
