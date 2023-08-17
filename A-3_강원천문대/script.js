@@ -10,12 +10,12 @@ $(document).ready(function(){
 
     //slide
     let slideImg = 0;
-    $(".sliderWrap").append($(".slider").first().clone(true));
+    $(".slider").hide().first().show();
 
     setInterval(function(){
         let nextImg = (slideImg + 1) % 3
-        $(".slider").eq(slideImg).fadeIn(1200);
-        $(".slider").eq(nextImg).fadeOut(1200);
+        $(".slider").eq(slideImg).fadeOut(1200);
+        $(".slider").eq(nextImg).fadeIn(1200);
 
         slideImg = nextImg;
     }, 3000);
