@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jQuery 오픈소스 파일/jquery-1.12.3.js"></script>
+    <script type="text/javascript" src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>JUST 쇼핑몰</title>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="logo">
+                <a href="#">
+                    <img src="./Header/logo.png" alt="logo img">
+                </a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">탑</a>
+                        <ul class="submenu">
+                            <li><a href="#">블라우스</a></li>
+                            <li><a href="#">티</a></li>
+                            <li><a href="#">셔츠</a></li>
+                            <li><a href="#">니트</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">아우터</a>
+                        <ul class="submenu">
+                            <li><a href="#">자켓</a></li>
+                            <li><a href="#">점퍼</a></li>
+                            <li><a href="#">코트</a></li>
+                            <li><a href="#">머플러</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">팬츠/스커트</a>
+                        <ul class="submenu">
+                            <li><a href="#">긴바지</a></li>
+                            <li><a href="#">짧은바지</a></li>
+                            <li><a href="#">스커트</a></li>
+                            <li><a href="#">데님</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">악세서리</a>
+                        <ul class="submenu">
+                            <li><a href="#">귀고리</a></li>
+                            <li><a href="#">목걸이</a></li>
+                            <li><a href="#">반지</a></li>
+                            <li><a href="#">팔찌</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <article id="slider">
+            <div class="sliderWrap">
+                <div class="slider s1">
+                    <img src="./[Slide]/img1.jpg" alt="slide Img 1">
+                    <span>이미지1</span>
+                </div>
+                <div class="slider s2">
+                    <img src="./[Slide]/img2.jpg" alt="slide Img 2">
+                    <span>이미지2</span>
+                </div>
+                <div class="slider s3">
+                    <img src="./[Slide]/img3.jpg" alt="slide Img 3">
+                    <span>이미지3</span>
+                </div>
+            </div>
+        </article>
+        <section id="contents">
+            <div class="tab">
+                <div class="tabbtn">
+                    <div class="click">공지사항</div>
+                    <div>갤러리</div>
+                </div>
+                <div class="tabcon">
+                    <div class="con1">
+                        <ul>
+                            <li>신규회원 대상 할인 이벤트 안내</li>
+                            <li>2020.11.23</li>
+                        </ul>
+                        <ul>
+                            <li>S/S 시즌 신규 의류 신상품 안내</li>
+                            <li>2020.11.23</li>
+                        </ul>
+                        <ul>
+                            <li>반품/환불 규정에 대해 알려드립니다</li>
+                            <li>2020.11.23</li>
+                        </ul>
+                        <ul>
+                            <li>3월 재입고 품목을 알려드립니다</li>
+                            <li>2020.11.23</li>
+                        </ul>
+                    </div>
+                    <div class="con2">
+                        <img src="./Contents/gallery 이미지/icon1.jpg" alt="gallery img1">
+                        <img src="./Contents/gallery 이미지/icon2.jpg" alt="gallery img2">
+                        <img src="./Contents/gallery 이미지/icon3.jpg" alt="gallery img3">
+                    </div>
+                </div>
+            </div>
+            <div class="banner"></div>
+            <div class="content3"></div>
+        </section>
+        <footer id="footer"></footer>
+    </div>
+    <script>
+        $(document).ready(function(){
+            //nav start
+            $(".nav > ul > li").mouseover(function(){
+                $(".nav > ul > li").find(".submenu").stop().slideDown()
+            });
+            $(".nav > ul > li").mouseout(function(){
+                $(".nav > ul > li").find(".submenu").stop().slideUp()
+            });
+            //nav end
+
+            //slide start
+            let slideImg = 0;
+            $(".sliderWrap").append($(".slider").first().clone(true));
+
+            setInterval(function(){
+                slideImg++;
+                $(".sliderWrap").animate({marginTop: -slideImg * 300 + "px"}, 600);
+
+                if(slideImg == 3){
+                    setTimeout(function(){
+                        $(".sliderWrap").animate({marginTop: 0}, 0);
+                        slideImg = 0;
+                    }, 700);
+                }
+            }, 3000);
+            //slide end
+
+            //tab start
+            let tabbtn = $(".tab > .tabbtn");
+            let tabcon = $(".tab > .tabcon");
+
+            $(tabbtn).click(function(){
+                $(this).addClass("click").siblings().removeClass("click");
+            });
+            //tab end
+        });
+    </script>
+</body>
+</html>
